@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/places"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      JsonPlaceholder
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let photo of photos">
+      <img [src]="photo.thumbnailUrl" alt="{{photo.title}}">
+      <ion-card-content>
+        <p>{{photo.title}}</p>
+        <p>{{photo.albumId}}: <a [href]="photo.url" target="_blank">{{photo.url}}</a></p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
